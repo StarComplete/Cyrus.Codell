@@ -1,1 +1,1 @@
-[Open Website](https://systemcodex403.github.io/Cyrus.Codell/)
+[Open Website](https://starcomplete.github.io/Cyrus.Codell/)
