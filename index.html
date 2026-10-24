@@ -335,6 +335,7 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
+        text-decoration: none;
       }
 
       .btn-primary {
@@ -447,6 +448,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
+        margin-bottom: 14px;
       }
 
       .stat {
@@ -690,111 +692,6 @@
       }
 
       /* =========================
-       CONTACT
-    ========================= */
-
-      .contact-card {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 35px;
-        padding: 30px;
-        border-radius: 24px;
-        border: 1px solid var(--border);
-        background:
-          linear-gradient(135deg, rgba(33, 150, 243, 0.07), transparent 40%),
-          #0d0d0d;
-      }
-
-      .contact-card h2 {
-        font-size: 2rem;
-        letter-spacing: -0.04em;
-        margin-bottom: 10px;
-      }
-
-      .contact-card > div > p {
-        color: var(--muted);
-        line-height: 1.65;
-        font-size: 0.88rem;
-      }
-
-      .contact-links {
-        margin-top: 20px;
-        padding-top: 16px;
-        border-top: 1px solid var(--border);
-        color: #777;
-        font-size: 0.8rem;
-        line-height: 2.2;
-      }
-
-      .contact-links a {
-        color: #ddd;
-        text-decoration: none;
-        transition: 0.2s;
-      }
-
-      .contact-links a:hover {
-        color: var(--blue-light);
-      }
-
-      form {
-        display: grid;
-        gap: 12px;
-      }
-
-      .field {
-        display: grid;
-        gap: 6px;
-      }
-
-      label {
-        color: #999;
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-      }
-
-      input,
-      textarea {
-        width: 100%;
-        border: 1px solid var(--border);
-        background: #070707;
-        color: white;
-        border-radius: 12px;
-        padding: 12px 14px;
-        font-family: inherit;
-        font-size: 0.85rem;
-        transition: 0.2s;
-      }
-
-      input::placeholder,
-      textarea::placeholder {
-        color: #444;
-      }
-
-      input:focus,
-      textarea:focus {
-        outline: none;
-        border-color: rgba(33, 150, 243, 0.65);
-        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
-      }
-
-      textarea {
-        min-height: 110px;
-        resize: vertical;
-      }
-
-      form .btn-primary {
-        width: 100%;
-        margin-top: 4px;
-      }
-
-      #form-status {
-        color: var(--muted);
-        font-size: 0.75rem;
-        line-height: 1.5;
-      }
-
-      /* =========================
        FOOTER
     ========================= */
 
@@ -822,10 +719,6 @@
 
         .playlist-grid {
           grid-template-columns: repeat(2, 1fr);
-        }
-
-        .contact-card {
-          grid-template-columns: 1fr;
         }
       }
 
@@ -868,12 +761,12 @@
           align-items: stretch;
         }
 
-        .hero-actions button {
+        .hero-actions button,
+        .hero-actions a {
           width: 100%;
         }
 
         .about-card,
-        .contact-card,
         .featured-player-card {
           padding: 20px;
         }
@@ -917,7 +810,6 @@
           <a href="#hero">Home</a>
           <a href="#player">Player</a>
           <a href="#playlist">Videos</a>
-          <a href="#contact">Contact</a>
         </nav>
 
         <a
@@ -951,16 +843,18 @@
           </h1>
 
           <p class="hero-description">
-            Welcome to my little corner of the internet. I create videos about
-            my life, my thoughts, random ideas, and whatever I'm currently
-            obsessed with. This is where the channel comes together.
+            Hey, welcome to my channel! :3 I make videos playing all kinds of
+            games, from messing around with friends to exploring new games and
+            going for 100% achievements. I mostly just play what i enjoy and
+            share the fun, weird, and sometimes funny moments along the way.
+            Hope you enjoy your time here!
           </p>
 
           <div class="hero-tags">
-            <span class="tag">Vlogs</span>
-            <span class="tag">Real Talk</span>
-            <span class="tag">Challenges</span>
-            <span class="tag">Behind The Scenes</span>
+            <span class="tag">Gaming</span>
+            <span class="tag">Lets play</span>
+            <span class="tag">Achievements Hunting</span>
+            <span class="tag">Friends</span>
           </div>
 
           <div class="hero-actions">
@@ -1003,8 +897,10 @@
                 <span id="about-start">Nov 30, 2023</span>
               </li>
               <li>
-                <strong>Channel Vibe</strong>
-                <span id="about-vibe">Low-key, real & chaotic</span>
+                <strong>Channel Type</strong>
+                <span id="about-vibe"
+                  >Gaming, Achievement hunting, Fun time with Friends</span
+                >
               </li>
               <li>
                 <strong>Channel</strong>
@@ -1036,6 +932,21 @@
               <div class="stat-value" id="stat-videos">14</div>
             </div>
           </div>
+
+          <!-- SEND MESSAGE VIA EMAIL BUTTON (PLACED UNDER STATS) -->
+          <a
+            class="btn-primary"
+            id="about-email-btn"
+            href="mailto:Sysen.Arlo.Codell@outlook.com"
+            style="
+              width: 100%;
+              text-align: center;
+              justify-content: center;
+              margin-top: 4px;
+            "
+          >
+            ✉ Send Message via Email →
+          </a>
         </div>
       </section>
 
@@ -1046,7 +957,7 @@
       <section id="player">
         <div class="section-heading">
           <div>
-            <div class="section-number">01 — NOW PLAYING</div>
+            <div class="section-number">1 — NOW PLAYING</div>
             <h2>Featured Video Player</h2>
           </div>
           <p>Select any video below to load into player.</p>
@@ -1093,105 +1004,12 @@
       <section id="playlist">
         <div class="section-heading">
           <div>
-            <div class="section-number">02 — PLAYLIST</div>
+            <div class="section-number">2 — PLAYLIST</div>
             <h2>Explore Videos</h2>
           </div>
         </div>
 
         <div class="playlist-grid" id="playlist-grid"></div>
-      </section>
-
-      <!-- =========================
-         SECTION 4: CONTACT
-    ========================= -->
-
-      <section id="contact">
-        <div class="section-heading">
-          <div>
-            <div class="section-number">03 — CONTACT</div>
-            <h2>Let's Connect</h2>
-          </div>
-
-          <p>Business inquiries, collabs, or saying hello.</p>
-        </div>
-
-        <div class="contact-card">
-          <div>
-            <h2>Business & Collabs</h2>
-
-            <p>
-              Want to work together, sponsor a video, collaborate, or just say
-              hi? Send a message and I'll get back to you.
-            </p>
-
-            <div class="contact-links">
-              Email:
-              <a
-                id="contact-email-link"
-                href="mailto:Sysen.Arlo.Codell@outlook.com"
-              >
-                Sysen.Arlo.Codell@outlook.com
-              </a>
-
-              <br />
-
-              YouTube:
-              <a id="contact-channel-link" target="_blank" rel="noopener">
-                Visit channel ↗
-              </a>
-
-              <br />
-
-              Instagram:
-              <a id="contact-instagram-link" target="_blank" rel="noopener">
-                @yourhandle
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <form id="contact-form">
-              <div class="field">
-                <label for="name"> NAME </label>
-
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-
-              <div class="field">
-                <label for="email"> EMAIL </label>
-
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
-
-              <div class="field">
-                <label for="message"> MESSAGE </label>
-
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="What's up?"
-                  required
-                ></textarea>
-              </div>
-
-              <button class="btn-primary" type="submit">Send Message →</button>
-
-              <p id="form-status"></p>
-            </form>
-          </div>
-        </div>
       </section>
     </main>
 
@@ -1314,7 +1132,6 @@
           youtubeVideosUrl,
           subscribeUrl,
           email,
-          instagramUrl,
           started,
           vibe,
           stats,
@@ -1351,21 +1168,13 @@
 
           btnWatchLatest: $("#btn-watch-latest"),
 
-          contactEmail: $("#contact-email-link"),
-
-          contactChannel: $("#contact-channel-link"),
-
-          contactInstagram: $("#contact-instagram-link"),
-
           footerYear: $("#footer-year"),
 
           footerName: $("#footer-name"),
 
           playlistGrid: $("#playlist-grid"),
 
-          form: $("#contact-form"),
-
-          formStatus: $("#form-status"),
+          aboutEmailBtn: $("#about-email-btn"),
         };
 
         /* =========================
@@ -1418,13 +1227,9 @@
            CONTACT
         ========================= */
 
-        if (dom.contactEmail) {
-          dom.contactEmail.href = `mailto:${email}`;
-          dom.contactEmail.textContent = email;
+        if (dom.aboutEmailBtn) {
+          dom.aboutEmailBtn.href = `mailto:${email}`;
         }
-
-        if (dom.contactChannel) dom.contactChannel.href = youtubeChannelUrl;
-        if (dom.contactInstagram) dom.contactInstagram.href = instagramUrl;
 
         /* =========================
            FOOTER
@@ -1504,21 +1309,6 @@
             if (!thumbnail) return;
             event.preventDefault();
             loadVideo(thumbnail.closest(".video-card"));
-          });
-        }
-
-        /* =========================
-           CONTACT FORM
-        ========================= */
-
-        if (dom.form) {
-          dom.form.addEventListener("submit", (event) => {
-            event.preventDefault();
-            if (dom.formStatus) {
-              dom.formStatus.textContent = "Thanks! Message sent successfully.";
-              dom.formStatus.style.color = "#42a5f5";
-            }
-            dom.form.reset();
           });
         }
       });
